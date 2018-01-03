@@ -8,36 +8,55 @@ using System.Web;
 
 namespace DharamshalaServices.Utilities
 {
-    public class DBHelper
+    public class DBHelper : IDisposable
     {
-        private DBHelper() { }
+        public DBHelper() {
+            conn = new MySqlConnection();
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["DharamshalaDB_ConnectionString"].ConnectionString;
+            conn.Open();
+        }
 
-        public static readonly DBHelper Instance = new DBHelper();
-
-        public string Insert(string  sql)
+        public void Dispose()
         {
-            string error = string.Empty;
-            using (MySqlConnection conn = new MySqlConnection())
+            if(conn != null)
             {
-                conn.ConnectionString = ConfigurationManager.ConnectionStrings["DharamshalaDB_ConnectionString"].ConnectionString;
-                try
+                conn.Close();
+                conn = null;
+            }
+        }
+
+        MySqlConnection conn;
+
+        public MySqlDataReader Select(string sql)
+        {
+            MySqlDataReader reader = null;
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(sql, conn))
                 {
-                    conn.Open();
-                    using (MySqlCommand command = new MySqlCommand(sql, conn))
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    error = ex.Message + ex.StackTrace;
-                }
-                finally
-                {
-                    conn.Close();
+                    reader = command.ExecuteReader();
                 }
             }
-            return error;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + ex.StackTrace);
+            }
+            return reader;
+        }
+
+        public void Insert(string sql)
+        {
+            try
+            {
+                using (MySqlCommand command = new MySqlCommand(sql, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + ex.StackTrace);
+            }
         }
     }
 }

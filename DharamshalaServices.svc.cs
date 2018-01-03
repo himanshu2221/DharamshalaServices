@@ -12,12 +12,40 @@ namespace DharamshalaServices
 {
     public class DharamshalaServices : IService
     {
-        public string SaveUserProfile(UserProfile userProfile)
+        public void SaveUserProfile(UserProfile userProfile)
         {
             string sql = string.Empty;
             sql = "INSERT INTO Registration (Name, Email, Phone, City, Country) VALUES('" + userProfile.Name + "','" + userProfile.Email + "','" +
                 userProfile.Phone + "','" + userProfile.City + "','" + userProfile.Country + "')";
-            return DBHelper.Instance.Insert(sql);
+            using (var obj = new DBHelper())
+            {
+                 obj.Insert(sql);
+            }
+        }
+
+        public List<City> GetCities()
+        {
+            List<City> cities =null;
+            string sql = "Select CityID, Name from City";
+            using (var obj = new DBHelper())
+            {
+                var records = obj.Select(sql);
+                if (records?.HasRows == true)
+                {
+                    cities = new List<City>();
+                    while (records.Read())
+                    {
+                        City city = new City()
+                        {
+                            CityName = records["Name"].ToString(),
+                            CityId = Convert.ToInt32(records["CityID"])
+                        };
+                        cities.Add(city);
+                    }
+                }
+
+            }
+            return cities;
         }
 
         public string GetDharamshlaByCity(string cityName)

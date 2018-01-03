@@ -14,9 +14,12 @@ namespace DharamshalaServices
     {
         [OperationContract]
         [WebInvoke( Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "SaveProfile/")]
-        string SaveUserProfile(UserProfile userProfile);
+        void SaveUserProfile(UserProfile userProfile);
 
         [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetDharamshalaByCity/{cityName}")]
         string GetDharamshlaByCity(string  cityName);
+
+        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare, UriTemplate = "GetCities/")]
+        List<City> GetCities();
     }
 }
