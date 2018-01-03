@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DharamshalaDB_ConnectionString-Web.config Connection String" description="DharamshalaDB_ConnectionString Connection String used in web.config by the application to access the database." defaultValue="server=182.50.133.78;port=3306;database=Dharamshala_DB;uid=DharamshalaU;pwd=Dhello@123" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="H:\\Prec\\DharamshalaServices\\DharamshalaServices\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DharamshalaDB_ConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,8 @@
+H:\Prec\DharamshalaServices\DharamshalaServices\bin\DharamshalaServices.dll.config
+H:\Prec\DharamshalaServices\DharamshalaServices\bin\DharamshalaServices.dll
+H:\Prec\DharamshalaServices\DharamshalaServices\bin\DharamshalaServices.pdb
+H:\Prec\DharamshalaServices\DharamshalaServices\bin\MySql.Data.dll
+H:\Prec\DharamshalaServices\DharamshalaServices\bin\MySql.Data.xml
+H:\Prec\DharamshalaServices\DharamshalaServices\obj\Debug\DharamshalaServices.dll
+H:\Prec\DharamshalaServices\DharamshalaServices\obj\Debug\DharamshalaServices.pdb
+H:\Prec\DharamshalaServices\DharamshalaServices\obj\Debug\DharamshalaServices.csprojResolveAssemblyReference.cache
