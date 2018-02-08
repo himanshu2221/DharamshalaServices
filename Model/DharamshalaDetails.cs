@@ -10,7 +10,7 @@ namespace DharamshalaServices.Model
         public string Address;
         public string Name;
         public string Email;
-        public int PhoneNumber;
+        public long PhoneNumber;
         public int DharamshalaId;
         public int CityId;
     }

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace DharamshalaServices.Model
 {
-    public class City
+    public class State
     {
-        public int CityId;
+        public int StateId;
         public string Name;
     }
 }

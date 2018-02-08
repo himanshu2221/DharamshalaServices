@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,6 +78,11 @@
       <DependentUpon>DharamshalaServices.svc</DependentUpon>
     </Compile>
     <Compile Include="IService.cs" />
+    <Compile Include="Model\Authenticate.cs" />
+    <Compile Include="Model\Booking.cs" />
+    <Compile Include="Model\BookingState.cs" />
+    <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\State.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\DharamshalaDetails.cs" />
     <Compile Include="Model\UserProfile.cs" />

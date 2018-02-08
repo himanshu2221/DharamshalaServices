@@ -6,3 +6,4 @@ H:\Prec\DharamshalaServices\DharamshalaServices\obj\Release\DharamshalaServices.
 H:\Prec\DharamshalaServices\DharamshalaServices\obj\Release\DharamshalaServices.pdb
 H:\Prec\DharamshalaServices\DharamshalaServices\bin\MySql.Data.dll
 H:\Prec\DharamshalaServices\DharamshalaServices\bin\MySql.Data.xml
+H:\Prec\DharamshalaServices\DharamshalaServices\obj\Release\DharamshalaServices.csproj.CoreCompileInputs.cache

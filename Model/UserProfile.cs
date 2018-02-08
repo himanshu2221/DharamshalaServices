@@ -12,5 +12,7 @@ namespace DharamshalaServices.Model
         public string City;
         public string Country;
         public long Phone;
+        public string UserId;
+        public string Password;
     }
 }

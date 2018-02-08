@@ -5,9 +5,9 @@ using System.Web;
 
 namespace DharamshalaServices.Model
 {
-    public class City
+    public class Authenticate
     {
-        public int CityId;
-        public string Name;
+        public string UserId { get; set; }
+        public string Password { get; set; }
     }
 }

@@ -5,9 +5,10 @@ using System.Web;
 
 namespace DharamshalaServices.Model
 {
-    public class City
+    public enum BookingState
     {
-        public int CityId;
-        public string Name;
+        InProgress,
+        Confirmed,
+        Canceled
     }
 }

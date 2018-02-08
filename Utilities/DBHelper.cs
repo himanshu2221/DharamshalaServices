@@ -44,19 +44,22 @@ namespace DharamshalaServices.Utilities
             return reader;
         }
 
-        public void Insert(string sql)
+        public int Insert(string sql)
         {
+            int newRecordId;
             try
             {
                 using (MySqlCommand command = new MySqlCommand(sql, conn))
                 {
                     command.ExecuteNonQuery();
+                    newRecordId = (int)command.LastInsertedId;
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message + ex.StackTrace);
             }
+            return newRecordId;
         }
     }
 }
