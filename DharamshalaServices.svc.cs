@@ -161,9 +161,10 @@ namespace DharamshalaServices
                     {
                         var room = new Room()
                         {
-                            Price = Convert.ToInt32(Convert.ToInt64(records["Price"].ToString())),
-                            RoomType = records["RoomType"].ToString()
-
+                            Price = Convert.ToInt32(records["Price"].ToString()),
+                            RoomType = records["RoomType"].ToString(),
+                            MaxPeopleAllowed = Convert.ToInt32(records["MaxPeopleAllowed"].ToString()),
+                            ImageUrl = records["ImageUrl"].ToString()
                         };
                         rooms.Add(room);
                     }

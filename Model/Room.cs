@@ -10,5 +10,7 @@ namespace DharamshalaServices.Model
         public int Price { get; set; }
         public string RoomType { get; set; }
         public int Id { get; set; }
+        public int MaxPeopleAllowed { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
